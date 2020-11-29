@@ -38,7 +38,7 @@ export const NavIcon = styled.div`
     font-weight: bold;
   }
 `;
-//fas fa-cloud-meatball
+
 export const Bars = styled(FaShoppingCart)`
   font-size: 2rem;
   transform: translate(-50%, -15%);

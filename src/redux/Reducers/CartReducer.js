@@ -22,7 +22,7 @@ const initialState = {
   cart: [],
   displayAddons: "",
   displayOptions: "",
-  maxSauce: true
+  maxSauce: false
 };
 
 export default function(state = initialState, action) {

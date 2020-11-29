@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Navbar from "../Navbar";
-import Sidebar from "../SideBar";
 import Cart from "../Cart";
 import {
   HomeContainer,

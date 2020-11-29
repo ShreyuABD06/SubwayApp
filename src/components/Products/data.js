@@ -118,7 +118,7 @@ export const productData = [
   {
     id: "p2",
     img: sweet5,
-    alt: "Pizza",
+    alt: "Choco",
     name: "Cherry top Chocolate Cookie",
     desc: "Cherry topped nutritious,cookie prepared with almonds",
     price: "200",
@@ -128,7 +128,7 @@ export const productData = [
   {
     id: "p3",
     img: sweet6,
-    alt: "Pizza",
+    alt: "Choco",
     name: "Double Dark Chunk Chocolate Cookie",
     desc: "Dark chocolate baked hot cookies with hot chocolate",
     price: "150",
@@ -167,7 +167,7 @@ export const productDataTwo = [
     name: "Chatpata Chana Indian Mix",
     desc:
       "97% Fat Free -A chunky, flavourful tangy mix of chickpea, bengal gram with aromatic Indian spices",
-    price: "150",
+    price: "120",
     button: "Add to cart",
     options: options
   },
@@ -178,7 +178,7 @@ export const productDataTwo = [
     name: "Spinach topped potato Cake",
     desc:
       "Soft diced tofu cubes made of bean, spices & condiments, cooked in an oven to give a smoky effect.",
-    price: "150",
+    price: "160",
     button: "Add to cart",
     options: options
   },
@@ -196,11 +196,11 @@ export const productDataTwo = [
   {
     id: "p9",
     img: product3,
-    alt: "Pizza",
+    alt: "Choco",
     name: "Chocolate Baked fruit Cake",
     desc:
       "Indian fruit topped with aromatic Mexican seasoning, roman grapes to chocolate  up your palate.",
-    price: "150",
+    price: "250",
     button: "Add to cart",
     options: options
   },
@@ -211,7 +211,7 @@ export const productDataTwo = [
     name: "Apple Fruit Cake Icecream",
     desc:
       "Marinara Sauce,basil,italian sausage, roma tomatoes, olives, and pesto",
-    price: "150",
+    price: "110",
     button: "Add to cart",
     options: options
   },
@@ -222,18 +222,18 @@ export const productDataTwo = [
     name: "Egg Tomato Topped Noodles",
     desc:
       "Served on a freshly boiled egg,with an abundance of exotic Indian spice mix",
-    price: "150",
+    price: "230",
     button: "Add to cart",
     options: options
   },
   {
     id: "p12",
     img: sweet1,
-    alt: "Pizza",
+    alt: "Choco",
     name: "Choco Icecream Shake",
     desc:
       "Hot chocolate cake served as cold icecream with almonds, cashews and badam",
-    price: "150",
+    price: "280",
     button: "Add to cart",
     options: options
   }

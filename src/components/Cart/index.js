@@ -35,9 +35,6 @@ import {
   TotalBillingWrapper,
   CartEmpty,
   CartEmptyImage
-  // SidebarLink,
-  // SideBtnWrap,
-  // SidebarRoute
 } from "./CartElements";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { emptyCart } from "./data";
@@ -49,7 +46,6 @@ class Cart extends React.Component {
   componentDidMount() {}
 
   ComputeTotal(cartData) {
-    console.log("Hey am   I working");
     var data = cartData;
     var cartTotal = data.reduce(function(prev, cur) {
       return prev + cur.totalCost * cur.count;
@@ -103,7 +99,7 @@ class Cart extends React.Component {
                             <Div2>+</Div2>
                             <Div3>+</Div3>
                             <Div4></Div4>
-                            <Div5>2</Div5>
+                            <Div5>1</Div5>
                           </CartItemAdd>
                           <CartItemBilling>
                             <span className="amountSpan">
