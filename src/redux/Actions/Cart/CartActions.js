@@ -4,7 +4,9 @@ import {
   ON_ADDON_CHANGE,
   ON_OPTIONAL_CHANGE,
   SET_INITIAL_STATE,
-  SET_ADDON_COST
+  SET_ADDON_COST,
+  DISPLAY_ADDONS,
+  DISPLAY_OPTIONS
 } from "./CartActionsTypes";
 
 export const addToCart = data => {
@@ -23,7 +25,6 @@ export const onRadioValueChange = (target, value) => {
 };
 
 export const onAddonItemsChange = data => {
-  debugger;
   return {
     type: ON_ADDON_CHANGE,
     payload: data
@@ -31,7 +32,6 @@ export const onAddonItemsChange = data => {
 };
 
 export const onOptionalItemsChange = data => {
-  debugger;
   return {
     type: ON_OPTIONAL_CHANGE,
     payload: data
@@ -51,6 +51,20 @@ export const setInitalState = (cheeseType, vegType, chipsType, totalCost) => {
 export const setAddonCost = data => {
   return {
     type: SET_ADDON_COST,
+    payload: data
+  };
+};
+
+export const displayAddonItems = data => {
+  return {
+    type: DISPLAY_ADDONS,
+    payload: data
+  };
+};
+
+export const displayOptionItems = data => {
+  return {
+    type: DISPLAY_OPTIONS,
     payload: data
   };
 };

@@ -49,6 +49,8 @@ class Cart extends React.Component {
   componentDidMount() {}
 
   ComputeTotal(cartData) {
+    console.log("Hey am   I working");
+    debugger;
     var data = cartData;
     var cartTotal = data.reduce(function(prev, cur) {
       return prev + cur.totalCost * cur.count;
@@ -126,9 +128,7 @@ class Cart extends React.Component {
             <TotalBillingDetails>
               <TotalAmountWrapper>
                 <TotalHeading>Total</TotalHeading>
-                <TotalAmount>
-                  {this.ComputeTotal.bind(this, this.props.cart)}
-                </TotalAmount>
+                <TotalAmount>{this.ComputeTotal(this.props.cart)}</TotalAmount>
               </TotalAmountWrapper>
               <CheckoutDiv>CHECKOUT</CheckoutDiv>
             </TotalBillingDetails>

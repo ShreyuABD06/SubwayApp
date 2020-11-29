@@ -4,3 +4,5 @@ export const ON_ADDON_CHANGE = "on_addon_change";
 export const ON_OPTIONAL_CHANGE = "on_optional_change";
 export const SET_INITIAL_STATE = "set_initial_state";
 export const SET_ADDON_COST = "set_addon_cost";
+export const DISPLAY_ADDONS = "display_addons";
+export const DISPLAY_OPTIONS = "display_options";

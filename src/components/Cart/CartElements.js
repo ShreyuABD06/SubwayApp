@@ -63,7 +63,7 @@ export const CartWrapper = styled.div`
   color: #141414; */
   flex-flow: column;
   max-height: 100%;
-  width: 300px;
+  width: 320px;
   /* @media screen and (max-width: 850px) {
     width: 100%;
     display: flex;
@@ -227,7 +227,7 @@ export const CartDataWrapper = styled.div`
 `;
 
 export const CartItem = styled.div`
-  padding: 1rem 0 1rem 1rem;
+  padding: 0.8rem 0 0.8rem 0.8rem;
 `;
 
 export const CartItemAdd = styled.div`
@@ -248,10 +248,13 @@ export const CartItemAdd = styled.div`
 `;
 
 export const CartItemBilling = styled.div`
-  font-size: 13px;
+  font-size: 12px;
   color: #535665;
   text-align: right;
   width: 45px;
+  span {
+    float: right;
+  }
 `;
 
 export const Div1 = styled.div`

@@ -4,7 +4,9 @@ import {
   SET_INITIAL_STATE,
   ON_ADDON_CHANGE,
   ON_OPTIONAL_CHANGE,
-  SET_ADDON_COST
+  SET_ADDON_COST,
+  DISPLAY_ADDONS,
+  DISPLAY_OPTIONS
 } from "../Actions/Cart/CartActionsTypes";
 
 const initialState = {
@@ -15,7 +17,9 @@ const initialState = {
   addonCost: 0,
   addons: [],
   options: [],
-  cart: []
+  cart: [],
+  displayAddons: "",
+  displayOptions: ""
 };
 
 export default function(state = initialState, action) {
@@ -50,14 +54,12 @@ export default function(state = initialState, action) {
       }
     }
     case ON_ADDON_CHANGE: {
-      debugger;
       return {
         ...state,
         addons: action.payload
       };
     }
     case ON_OPTIONAL_CHANGE: {
-      debugger;
       return {
         ...state,
         options: action.payload
@@ -76,6 +78,18 @@ export default function(state = initialState, action) {
       return {
         ...state,
         addonCost: action.payload
+      };
+    }
+    case DISPLAY_ADDONS: {
+      return {
+        ...state,
+        displayAddons: action.payload
+      };
+    }
+    case DISPLAY_OPTIONS: {
+      return {
+        ...state,
+        displayOptions: action.payload
       };
     }
     default:

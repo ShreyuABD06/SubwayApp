@@ -8,13 +8,9 @@ export default class Navbar extends React.Component {
         <Nav>
           <NavLink to="/">Subway Foods</NavLink>
           <NavIcon onClick={this.props.toggle}>
-            <p>Menu</p>
-            <Bars />
-          </NavIcon>
-          {/* <NavIcon>
             <p>Cart</p>
             <Bars />
-          </NavIcon> */}
+          </NavIcon>
         </Nav>
       </>
     );

@@ -197,6 +197,11 @@ class FoodOptionsModal extends React.Component {
       }
       // this.setState({ addonCost: currentTotal });
     }
+    var addonItems = [];
+    this.props.addons.forEach(element => {
+      addonItems.push(element.name);
+    });
+    this.props.displayAddonItems(addonItems.join(","));
     this.props.setAddonCost(currentTotal);
   }
 
@@ -211,12 +216,6 @@ class FoodOptionsModal extends React.Component {
       console.log(checkboxes[i].id);
       var index = currentOptions.findIndex(x => x.id == checkboxes[i].id);
       if (index == -1 && checkboxes[i].checked == true) {
-        // numberOfCheckedItems++;
-        // if(numberOfCheckedItems > 2){
-        //   document.getElementById(val.id).checked = false;
-        //   alert("You can't select more than three favorite sauce!");
-        // }
-        //var joined =
         if (currentOptions.length > 2) {
           debugger;
           console.log(checkboxes[i].id);
@@ -238,6 +237,12 @@ class FoodOptionsModal extends React.Component {
         this.props.onOptionalItemsChange(currentOptions);
         // this.setState({ options: some });
       }
+
+      var optionItems = [];
+      this.props.options.forEach(element => {
+        optionItems.push(element.name);
+      });
+      this.props.displayOptionItems(optionItems.join(","));
     }
 
     // console.log(this.state.options);
@@ -269,6 +274,8 @@ class FoodOptionsModal extends React.Component {
   // }
 
   render() {
+    console.log(3 + this.props.addons.length + this.props.options.length);
+
     if (!this.props.showModal) {
       return null;
     }
@@ -300,11 +307,6 @@ class FoodOptionsModal extends React.Component {
             <ModalDataBox>
               <ModalDataMenu>
                 <DataMenuWrapper>
-                  {/* <DataMenuLink href="#choice1">Choice of Cheese</DataMenuLink>
-                    <DataMenuLink href="#choice2">Choice of Chips</DataMenuLink>
-                    <DataMenuLink href="#choice3">Choice of Sauce Any (3)</DataMenuLink>
-                    <DataMenuLink href="#choice4">Choice of Vegetables</DataMenuLink> */}
-
                   <a href="#choice1" className="DataMenuLink">
                     <div className="OptionNameTops OptionNameTopsH">
                       Choice of Cheese
@@ -454,10 +456,13 @@ class FoodOptionsModal extends React.Component {
             <ModalBox />
             <ModalSelectedItemsWrapper>
               <ModalSelectedItems>
-                <SelectedAddonsCount>4</SelectedAddonsCount>
+                <SelectedAddonsCount>
+                  {3 + this.props.options.length + this.props.addons.length}
+                </SelectedAddonsCount>
                 <SelectedItems>
-                  {this.props.cheeseType}, {this.props.chipsType},{" "}
-                  {this.props.vegType}
+                  {this.props.cheeseType}, {this.props.chipsType},
+                  {this.props.vegType},{this.props.displayAddons},
+                  {this.props.displayOptions}
                 </SelectedItems>
               </ModalSelectedItems>
             </ModalSelectedItemsWrapper>
@@ -489,7 +494,9 @@ const mapStateToProps = state => ({
   addonCost: state.cartReducerState.addonCost,
   addons: state.cartReducerState.addons,
   options: state.cartReducerState.options,
-  cart: state.cartReducerState.cart
+  cart: state.cartReducerState.cart,
+  displayAddons: state.cartReducerState.displayAddons,
+  displayOptions: state.cartReducerState.displayOptions
 });
 
 const mapDispatchToProps = {
