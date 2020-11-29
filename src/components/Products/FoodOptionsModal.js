@@ -223,150 +223,209 @@ class FoodOptionsModal extends React.Component {
             <ModalDataBox>
               <ModalDataMenu>
                 <DataMenuWrapper>
-                  <a href="#choice1" className="DataMenuLink">
-                    <div className="OptionNameTops OptionNameTopsH">
-                      Choice of Cheese
-                    </div>
-                  </a>
-                  <a href="#choice2" className="DataMenuLink">
+                  <Link
+                    activeClass="active"
+                    to="choice1"
+                    spy={true}
+                    smooth={true}
+                    offset={50}
+                    duration={500}
+                    className="DataMenuLink OptionNameTopsH"
+                    containerId="containerElement"
+                  >
+                    <div className="OptionNameTops">Choice of Cheese</div>
+                  </Link>
+
+                  <Link
+                    activeClass="active"
+                    to="choice2"
+                    spy={true}
+                    smooth={true}
+                    offset={50}
+                    duration={500}
+                    containerId="containerElement"
+                  >
                     <div className="OptionNameTops">Choice of Chips</div>
-                  </a>
-                  <a href="#choice3" className="DataMenuLink">
+                  </Link>
+                  <Link
+                    activeClass="active"
+                    to="choice3"
+                    spy={true}
+                    smooth={true}
+                    offset={50}
+                    duration={500}
+                    containerId="containerElement"
+                  >
                     <div className="OptionNameTops">
                       Choice of Sauce Any (3)
                     </div>
-                  </a>
-                  <a href="#choice4" className="DataMenuLink">
+                  </Link>
+                  <Link
+                    activeClass="active"
+                    to="choice4"
+                    spy={true}
+                    smooth={true}
+                    offset={50}
+                    duration={500}
+                    containerId="containerElement"
+                  >
                     <div className="OptionNameTops">Choice of Vegetables</div>
-                  </a>
-
-                  <a href="#choice5" className="DataMenuLink">
+                  </Link>
+                  <Link
+                    activeClass="active"
+                    to="choice5"
+                    spy={true}
+                    smooth={true}
+                    offset={50}
+                    duration={500}
+                    containerId="containerElement"
+                  >
                     <div className="OptionNameTops">Add Ons</div>
-                  </a>
+                  </Link>
                 </DataMenuWrapper>
               </ModalDataMenu>
               <ModalDataWrapper>
                 <ModalBox />
-                <ModalChoicesList id="cust_groups">
-                  <ModalChoicesWrapper>
-                    <ModalChoice id="choice1">
-                      <ChoiceName>Choice of Cheese</ChoiceName>
-                      <ChoiceOptions>
-                        {this.props.data.options.cheese.map((cheese, index) => {
-                          return (
-                            <Label>
-                              <LabelName>{cheese.name}</LabelName>
-                              <input
-                                type="radio"
-                                id={cheese.id}
-                                value={cheese.name}
-                                name="cheeseType"
-                                onChange={this.onChangeValue}
-                                checked={this.props.cheeseType === cheese.name}
-                              />
-                              <span className="checkmark"></span>
-                            </Label>
-                          );
-                        })}
-                      </ChoiceOptions>
-                    </ModalChoice>
-                    <ModalChoice id="choice2">
-                      <ChoiceName>Choice of Chips</ChoiceName>
-                      <ChoiceOptions>
-                        {this.props.data.options.chips.map((chips, index) => {
-                          return (
-                            <Label>
-                              <LabelName>{chips.name}</LabelName>
-                              <input
-                                type="radio"
-                                id={chips.id}
-                                value={chips.name}
-                                name="chipsType"
-                                onChange={this.onChangeValue}
-                                checked={this.props.chipsType === chips.name}
-                              />
-                              <span className="checkmark"></span>
-                            </Label>
-                          );
-                        })}
-                      </ChoiceOptions>
-                    </ModalChoice>
-                    <ModalChoice id="choice3">
-                      <ChoiceName>
-                        Choice of Sauce Any (3)
-                        <span className="optional">(optional)</span>
-                      </ChoiceName>
-                      <ChoiceOptions>
-                        {this.props.data.options.sauce.map((sauce, index) => {
-                          return (
-                            <>
-                              <CheckBoxLabel>
-                                {sauce.name}
-                                <input
-                                  type="checkbox"
-                                  name="optionCheckbox"
-                                  id={sauce.id}
-                                  onChange={this.onOptionalChange.bind(
-                                    this,
-                                    sauce
-                                  )}
-                                  value={sauce.name}
-                                />
-                                <span className="checkmark"></span>
-                              </CheckBoxLabel>
-                            </>
-                          );
-                        })}
-                      </ChoiceOptions>
-                    </ModalChoice>
-                    <ModalChoice id="choice4">
-                      <ChoiceName>Choice of Vegetables</ChoiceName>
-                      <ChoiceOptions>
-                        {this.props.data.options.vegetables.map(
-                          (veg, index) => {
+                <ModalChoicesList id="containerElement">
+                  <ModalChoicesWrapper id="containerElement">
+                    <Element name="choice1" className="element">
+                      <ModalChoice>
+                        <ChoiceName>Choice of Cheese</ChoiceName>
+                        <ChoiceOptions>
+                          {this.props.data.options.cheese.map(
+                            (cheese, index) => {
+                              return (
+                                <Label>
+                                  <LabelName>{cheese.name}</LabelName>
+                                  <input
+                                    type="radio"
+                                    id={cheese.id}
+                                    value={cheese.name}
+                                    name="cheeseType"
+                                    onChange={this.onChangeValue}
+                                    checked={
+                                      this.props.cheeseType === cheese.name
+                                    }
+                                  />
+                                  <span className="checkmark"></span>
+                                </Label>
+                              );
+                            }
+                          )}
+                        </ChoiceOptions>
+                      </ModalChoice>
+                    </Element>
+                    <Element name="choice2" className="element">
+                      <ModalChoice>
+                        <ChoiceName>Choice of Chips</ChoiceName>
+                        <ChoiceOptions>
+                          {this.props.data.options.chips.map((chips, index) => {
                             return (
                               <Label>
-                                <LabelName>{veg.name}</LabelName>
+                                <LabelName>{chips.name}</LabelName>
                                 <input
-                                  id={veg.id}
                                   type="radio"
-                                  value={veg.name}
-                                  name="vegType"
+                                  id={chips.id}
+                                  value={chips.name}
+                                  name="chipsType"
                                   onChange={this.onChangeValue}
-                                  checked={this.props.vegType === veg.name}
+                                  checked={this.props.chipsType === chips.name}
                                 />
                                 <span className="checkmark"></span>
                               </Label>
                             );
-                          }
-                        )}
-                      </ChoiceOptions>
-                    </ModalChoice>
-                    <ModalChoice id="choice5">
-                      <ChoiceName>Add Ons</ChoiceName>
-                      <ChoiceOptions>
-                        {this.props.data.options.addons.map((addon, index) => {
-                          return (
-                            <>
-                              <CheckBoxLabel>
-                                {addon.name} {"   "} {addon.price}
-                                <input
-                                  type="checkbox"
-                                  name="addonCheckbox"
-                                  id={addon.id}
-                                  onChange={this.onAddonChange.bind(
-                                    this,
-                                    addon
-                                  )}
-                                  value={addon.name}
-                                />
-                                <span className="checkmark"></span>
-                              </CheckBoxLabel>
-                            </>
-                          );
-                        })}
-                      </ChoiceOptions>
-                    </ModalChoice>
+                          })}
+                        </ChoiceOptions>
+                      </ModalChoice>
+                    </Element>
+                    <Element name="choice3" className="element">
+                      <ModalChoice>
+                        <ChoiceName>
+                          Choice of Sauce Any (3)
+                          <span className="optional">(optional)</span>
+                        </ChoiceName>
+                        <ChoiceOptions>
+                          {this.props.data.options.sauce.map((sauce, index) => {
+                            return (
+                              <>
+                                <CheckBoxLabel>
+                                  {sauce.name}
+                                  <input
+                                    type="checkbox"
+                                    name="optionCheckbox"
+                                    id={sauce.id}
+                                    onChange={this.onOptionalChange.bind(
+                                      this,
+                                      sauce
+                                    )}
+                                    value={sauce.name}
+                                  />
+                                  <span className="checkmark"></span>
+                                </CheckBoxLabel>
+                              </>
+                            );
+                          })}
+                        </ChoiceOptions>
+                      </ModalChoice>
+                    </Element>
+                    <Element name="choice4" className="element">
+                      <ModalChoice>
+                        <ChoiceName>Choice of Vegetables</ChoiceName>
+                        <ChoiceOptions>
+                          {this.props.data.options.vegetables.map(
+                            (veg, index) => {
+                              return (
+                                <Label>
+                                  <LabelName>{veg.name}</LabelName>
+                                  <input
+                                    id={veg.id}
+                                    type="radio"
+                                    value={veg.name}
+                                    name="vegType"
+                                    onChange={this.onChangeValue}
+                                    checked={this.props.vegType === veg.name}
+                                  />
+                                  <span className="checkmark"></span>
+                                </Label>
+                              );
+                            }
+                          )}
+                        </ChoiceOptions>
+                      </ModalChoice>
+                    </Element>
+                    <Element name="choice5" className="element">
+                      <ModalChoice>
+                        <ChoiceName>Add Ons</ChoiceName>
+                        <ChoiceOptions>
+                          {this.props.data.options.addons.map(
+                            (addon, index) => {
+                              return (
+                                <>
+                                  <CheckBoxLabel>
+                                    {addon.name} {"   "}
+                                    {"   "}
+                                    <span className="rupees">
+                                      {addon.price}
+                                    </span>
+                                    <input
+                                      type="checkbox"
+                                      name="addonCheckbox"
+                                      id={addon.id}
+                                      onChange={this.onAddonChange.bind(
+                                        this,
+                                        addon
+                                      )}
+                                      value={addon.name}
+                                    />
+                                    <span className="checkmark"></span>
+                                  </CheckBoxLabel>
+                                </>
+                              );
+                            }
+                          )}
+                        </ChoiceOptions>
+                      </ModalChoice>
+                    </Element>
                   </ModalChoicesWrapper>
                 </ModalChoicesList>
               </ModalDataWrapper>
