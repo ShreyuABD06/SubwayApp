@@ -1,6 +1,23 @@
 import React from "react";
 import { connect } from "react-redux";
 import * as Actions from "../../redux/Actions/Cart/CartActions";
+import DialogActions from "@material-ui/core/DialogActions";
+import {
+  Box,
+  Button,
+  Checkbox,
+  Collapse,
+  Container,
+  Divider,
+  FormControlLabel,
+  FormGroup,
+  Grid,
+  IconButton,
+  LinearProgress,
+  Paper,
+  Radio,
+  Typography
+} from "@material-ui/core";
 import {
   Link,
   Element,
@@ -48,15 +65,6 @@ import FoodOptionsModalStyles from "./FoodOptionsModal.css";
 class FoodOptionsModal extends React.Component {
   constructor() {
     super();
-    // this.state = {
-    //   cheeseType: "",
-    //   chipsType: "",
-    //   vegType: "",
-    //   totalCost: 0,
-    //   addonCost: 0,
-    //   addons: [],
-    //   options: []
-    // };
     this.onChangeValue = this.onChangeValue.bind(this);
   }
 
@@ -77,38 +85,15 @@ class FoodOptionsModal extends React.Component {
       chipsInitial[0].name,
       this.props.data.price
     );
-
-    // this.setState({ cheeseType: cheeseInitial[0].name });
-    // this.setState({ chipsType: chipsInitial[0].name });
-    // this.setState({ vegType: vegInitial[0].name });
-    // this.setState({ totalCost: this.props.data.price });
   }
-
-  // this.props.data.options.cheese[0].name
   onChangeValue(event) {
-    //console.log(event.target.value);
     this.props.onRadioValueChange(event.target.name, event.target.value);
-    //this.setState({ [event.target.name]: event.target.value }); //Using props for all events
   }
-
-  // onChipsChangeValue(event) {
-  //   console.log(event.target.value);
-  //   this.setState({ chipsType: event.target.value });
-  // }
-
-  // onVegChangeValue(event) {
-  //   console.log(event.target.value);
-  //   this.setState({ vegType: event.target.value });
-  // }
 
   onClose = e => {
+    this.props.killAllValues();
     this.props.onClose && this.props.onClose(e);
   };
-
-  // onCheckboxChange(event) {
-  //   debugger;
-  //   console.log(event.target.checked);
-  // }
 
   AddNewItem(data) {
     debugger;
@@ -138,37 +123,6 @@ class FoodOptionsModal extends React.Component {
     debugger;
   }
 
-  // onAddonChange(val) {
-  //   debugger;
-  //   console.log(val);
-  //   var checkboxes = document.getElementsByName("addonCheckbox");
-  //   var numberOfCheckedItems = 0;
-  //   var cc = 0;
-  //   this.setState({ addons: [] });
-  //   var addonSelected = [];
-  //   for (var i = 0; i < checkboxes.length; i++) {
-  //     if (checkboxes[i].checked) {
-  //       debugger;
-  //       addonSelected.push(val);
-  //       cc = cc + val.price;
-  //       debugger;
-  //       numberOfCheckedItems++;
-  //     }
-  //   }
-  //   //1. When added should be added to state(with existing data)
-  //   //2. When unchecked shoud be removed from state
-  //   console.log(addonSelected);
-  //   //[...state.addons, val]
-  //   this.setState({ addonCost: cc, addons: addonSelected });
-
-  //   debugger;
-  //   // console.log(addonSelected);
-  //   // if (numberOfCheckedItems > 3) {
-  //   //   alert("You can't select more than three favorite sauce!");
-  //   //   return false;
-  //   // }
-  // }
-
   onAddonChange(val) {
     debugger;
     var currentAddons = this.props.addons;
@@ -177,25 +131,16 @@ class FoodOptionsModal extends React.Component {
     var numberOfCheckedItems = 0;
     var optionSelected = [];
     for (var i = 0; i < checkboxes.length; i++) {
-      console.log(this.props.addons);
-      console.log(checkboxes[i].id);
       var index = currentAddons.findIndex(x => x.id == checkboxes[i].id);
       if (index == -1 && checkboxes[i].checked == true) {
         currentTotal += val.price;
         var joined = currentAddons.push(val);
-        console.log(joined);
         this.props.onAddonItemsChange(currentAddons);
-        // this.setState({ addons: some });
-        // this.setState(prevState => ({
-        //   options: [...prevState.options, joined]
-        // }));
       } else if (index >= 0 && checkboxes[i].checked == false) {
         currentAddons.splice(index, 1);
         currentTotal -= val.price;
         this.props.onAddonItemsChange(currentAddons);
-        // this.setState({ addons: some });
       }
-      // this.setState({ addonCost: currentTotal });
     }
     var addonItems = [];
     this.props.addons.forEach(element => {
@@ -206,7 +151,6 @@ class FoodOptionsModal extends React.Component {
   }
 
   onOptionalChange(val) {
-    debugger;
     var currentOptions = this.props.options;
     var checkboxes = document.getElementsByName("optionCheckbox");
     var numberOfCheckedItems = 0;
@@ -221,21 +165,19 @@ class FoodOptionsModal extends React.Component {
           console.log(checkboxes[i].id);
           console.log(val.id);
           document.getElementById(checkboxes[i].id).checked = false;
-          alert("You can't select more than three favorite sauce!");
+          this.props.handleSauceMaxLimit();
+          setTimeout(() => {
+            this.props.handleSauceMaxLimit();
+          }, 1000);
+          // alert("You can't select more than three favorite sauce!");
           this.props.onOptionalItemsChange(currentOptions);
         } else {
           currentOptions.push(val);
           this.props.onOptionalItemsChange(currentOptions);
         }
-
-        // this.setState({ options: currentOptions });
-        // this.setState(prevState => ({
-        //   options: [...prevState.options, joined]
-        // }));
       } else if (index >= 0 && checkboxes[i].checked == false) {
         currentOptions.splice(index, 1);
         this.props.onOptionalItemsChange(currentOptions);
-        // this.setState({ options: some });
       }
 
       var optionItems = [];
@@ -244,34 +186,8 @@ class FoodOptionsModal extends React.Component {
       });
       this.props.displayOptionItems(optionItems.join(","));
     }
-
-    // console.log(this.state.options);
-
-    // this.setState({ options: optionSelected });
     debugger;
   }
-
-  // onOptionalChange(val) {
-  //   debugger;
-  //   console.log(val);
-  //   var checkboxes = document.getElementsByName("optionCheckbox");
-  //   var numberOfCheckedItems = 0;
-  //   var optionSelected = [];
-  //   for (var i = 0; i < checkboxes.length; i++) {
-  //     if (checkboxes[i].checked) {
-  //       numberOfCheckedItems++;
-  //       if (numberOfCheckedItems > 2) {
-  //         document.getElementById(val.id).checked = false;
-  //         alert("You can't select more than three favorite sauce!");
-  //       } else {
-  //         optionSelected.push(val);
-  //       }
-  //     }
-  //   }
-  //   console.log(optionSelected);
-  //   this.setState({ options: optionSelected });
-  //   debugger;
-  // }
 
   render() {
     console.log(3 + this.props.addons.length + this.props.options.length);
@@ -322,6 +238,10 @@ class FoodOptionsModal extends React.Component {
                   </a>
                   <a href="#choice4" className="DataMenuLink">
                     <div className="OptionNameTops">Choice of Vegetables</div>
+                  </a>
+
+                  <a href="#choice5" className="DataMenuLink">
+                    <div className="OptionNameTops">Add Ons</div>
                   </a>
                 </DataMenuWrapper>
               </ModalDataMenu>
@@ -422,8 +342,8 @@ class FoodOptionsModal extends React.Component {
                         )}
                       </ChoiceOptions>
                     </ModalChoice>
-                    <ModalChoice id="choice3">
-                      <ChoiceName>Add On</ChoiceName>
+                    <ModalChoice id="choice5">
+                      <ChoiceName>Add Ons</ChoiceName>
                       <ChoiceOptions>
                         {this.props.data.options.addons.map((addon, index) => {
                           return (
@@ -453,8 +373,24 @@ class FoodOptionsModal extends React.Component {
             </ModalDataBox>
           </ModalDataContainer>
           <ModalFooter>
-            <ModalBox />
+            {/* <ModalBox /> */}
             <ModalSelectedItemsWrapper>
+              <Collapse in={this.props.maxSauce}>
+                <Paper elevation={0} className="sauceMax">
+                  <Typography
+                    style={{
+                      fontSize: 14,
+                      fontWeight: "400",
+                      color: "#fff",
+                      fontFamily: "ProximaNova,Arial,Helvetica Neue,sans-serif",
+                      margin: "15px 0px 15px 0px"
+                    }}
+                    variant="body2"
+                  >
+                    You can select a maximum of 3 Choice of Sauce Any (3).
+                  </Typography>
+                </Paper>
+              </Collapse>
               <ModalSelectedItems>
                 <SelectedAddonsCount>
                   {3 + this.props.options.length + this.props.addons.length}
@@ -486,7 +422,6 @@ class FoodOptionsModal extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  //showModal: state.productsReducerState.showModal,
   cheeseType: state.cartReducerState.cheeseType,
   chipsType: state.cartReducerState.chipsType,
   vegType: state.cartReducerState.vegType,
@@ -496,7 +431,8 @@ const mapStateToProps = state => ({
   options: state.cartReducerState.options,
   cart: state.cartReducerState.cart,
   displayAddons: state.cartReducerState.displayAddons,
-  displayOptions: state.cartReducerState.displayOptions
+  displayOptions: state.cartReducerState.displayOptions,
+  maxSauce: state.cartReducerState.maxSauce
 });
 
 const mapDispatchToProps = {

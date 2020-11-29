@@ -6,7 +6,9 @@ import {
   ON_OPTIONAL_CHANGE,
   SET_ADDON_COST,
   DISPLAY_ADDONS,
-  DISPLAY_OPTIONS
+  DISPLAY_OPTIONS,
+  HANDLE_MAX_SAUCE,
+  KILL_CURRENT_STATE
 } from "../Actions/Cart/CartActionsTypes";
 
 const initialState = {
@@ -19,7 +21,8 @@ const initialState = {
   options: [],
   cart: [],
   displayAddons: "",
-  displayOptions: ""
+  displayOptions: "",
+  maxSauce: true
 };
 
 export default function(state = initialState, action) {
@@ -90,6 +93,22 @@ export default function(state = initialState, action) {
       return {
         ...state,
         displayOptions: action.payload
+      };
+    }
+
+    case HANDLE_MAX_SAUCE: {
+      return {
+        ...state,
+        maxSauce: !state.maxSauce
+      };
+    }
+    case KILL_CURRENT_STATE: {
+      return {
+        ...state,
+        showModal: 0,
+        addonCost: 0,
+        addons: [],
+        options: []
       };
     }
     default:

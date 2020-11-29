@@ -6,3 +6,5 @@ export const SET_INITIAL_STATE = "set_initial_state";
 export const SET_ADDON_COST = "set_addon_cost";
 export const DISPLAY_ADDONS = "display_addons";
 export const DISPLAY_OPTIONS = "display_options";
+export const HANDLE_MAX_SAUCE = "handle_max_sauce";
+export const KILL_CURRENT_STATE = "kill_current_state";

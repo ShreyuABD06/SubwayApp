@@ -6,7 +6,9 @@ import {
   SET_INITIAL_STATE,
   SET_ADDON_COST,
   DISPLAY_ADDONS,
-  DISPLAY_OPTIONS
+  DISPLAY_OPTIONS,
+  HANDLE_MAX_SAUCE,
+  KILL_CURRENT_STATE
 } from "./CartActionsTypes";
 
 export const addToCart = data => {
@@ -66,5 +68,17 @@ export const displayOptionItems = data => {
   return {
     type: DISPLAY_OPTIONS,
     payload: data
+  };
+};
+
+export const handleSauceMaxLimit = () => {
+  return {
+    type: HANDLE_MAX_SAUCE
+  };
+};
+
+export const killAllValues = () => {
+  return {
+    type: KILL_CURRENT_STATE
   };
 };
