@@ -1,13 +1,14 @@
 import styled from "styled-components";
 import { NavLink as Link } from "react-router-dom";
-import { FaCloudMeatball } from "react-icons/fa";
+import { FaShoppingCart } from "react-icons/fa";
 
 export const Nav = styled.nav`
   background: transparent;
-  height: 80px;
+  height: 90px;
   display: flex;
   justify-content: center;
   font-weight: 700;
+  top: 20px;
 `;
 
 export const NavLink = styled(Link)`
@@ -33,12 +34,12 @@ export const NavIcon = styled.div`
   cursor: pointer;
   color: #fff;
   p {
-    transform: translate(-175%, 100%);
+    transform: translate(-185%, 150%);
     font-weight: bold;
   }
 `;
 //fas fa-cloud-meatball
-export const Bars = styled(FaCloudMeatball)`
+export const Bars = styled(FaShoppingCart)`
   font-size: 2rem;
   transform: translate(-50%, -15%);
 `;

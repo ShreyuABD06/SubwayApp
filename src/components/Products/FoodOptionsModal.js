@@ -2,30 +2,8 @@ import React from "react";
 import { connect } from "react-redux";
 import * as Actions from "../../redux/Actions/Cart/CartActions";
 import DialogActions from "@material-ui/core/DialogActions";
-import {
-  Box,
-  Button,
-  Checkbox,
-  Collapse,
-  Container,
-  Divider,
-  FormControlLabel,
-  FormGroup,
-  Grid,
-  IconButton,
-  LinearProgress,
-  Paper,
-  Radio,
-  Typography
-} from "@material-ui/core";
-import {
-  Link,
-  Element,
-  Events,
-  animateScroll as scroll,
-  scrollSpy,
-  scroller
-} from "react-scroll";
+import { Collapse, Container, Paper, Typography } from "@material-ui/core";
+import { Link, Element } from "react-scroll";
 
 import {
   ModalContent,
@@ -70,7 +48,6 @@ class FoodOptionsModal extends React.Component {
 
   componentDidMount() {
     let cheeseInitial = this.props.data.options.cheese.filter(x => {
-      debugger;
       return x.selected == true;
     });
     let chipsInitial = this.props.data.options.chips.filter(x => {
@@ -96,11 +73,9 @@ class FoodOptionsModal extends React.Component {
   };
 
   AddNewItem(data) {
-    debugger;
     var cartObj = this.props.cart;
     var findValue = cartObj.find(x => (x.id = data.id));
     var totalCost = parseInt(data.price) + parseInt(this.props.addonCost);
-    debugger;
     var selectedOptions = {
       cheeseType: this.props.cheeseType,
       vegType: this.props.vegType,
@@ -120,11 +95,9 @@ class FoodOptionsModal extends React.Component {
     };
     cartObj.push(newItem);
     this.props.addToCart(cartObj);
-    debugger;
   }
 
   onAddonChange(val) {
-    debugger;
     var currentAddons = this.props.addons;
     var currentTotal = this.props.addonCost;
     var checkboxes = document.getElementsByName("addonCheckbox");
@@ -161,7 +134,6 @@ class FoodOptionsModal extends React.Component {
       var index = currentOptions.findIndex(x => x.id == checkboxes[i].id);
       if (index == -1 && checkboxes[i].checked == true) {
         if (currentOptions.length > 2) {
-          debugger;
           console.log(checkboxes[i].id);
           console.log(val.id);
           document.getElementById(checkboxes[i].id).checked = false;
@@ -186,7 +158,6 @@ class FoodOptionsModal extends React.Component {
       });
       this.props.displayOptionItems(optionItems.join(","));
     }
-    debugger;
   }
 
   render() {

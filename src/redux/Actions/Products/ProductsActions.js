@@ -18,7 +18,6 @@ export const closeModal = () => {
 };
 
 export const addItemToCart = item => {
-  debugger;
   return {
     type: ADD_TO_CART,
     payload: item

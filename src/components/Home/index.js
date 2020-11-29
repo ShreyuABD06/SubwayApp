@@ -29,11 +29,10 @@ export default class Home extends React.Component {
         <HomeContainer>
           <Navbar toggle={this.toggle.bind(this)} />
           <Cart isOpen={this.state.isOpen} toggle={this.toggle.bind(this)} />
-          {/* <Sidebar isOpen={this.state.isOpen} toggle={this.toggle.bind(this)} /> */}
           <HomeContent>
             <HomeItems>
-              <HomeH1>Tastiest Foods Ever</HomeH1>
-              <HomeP>Only at SUBWAY</HomeP>
+              <HomeH1>SUBWAY EASY BITES</HomeH1>
+              <HomeP> Eat. Drink. Love. </HomeP>
               <HomeBtn>Order Now</HomeBtn>
             </HomeItems>
           </HomeContent>

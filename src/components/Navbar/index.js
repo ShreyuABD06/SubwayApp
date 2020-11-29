@@ -6,7 +6,6 @@ export default class Navbar extends React.Component {
     return (
       <>
         <Nav>
-          <NavLink to="/">Subway Foods</NavLink>
           <NavIcon onClick={this.props.toggle}>
             <p>Cart</p>
             <Bars />

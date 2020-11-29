@@ -50,18 +50,14 @@ class Cart extends React.Component {
 
   ComputeTotal(cartData) {
     console.log("Hey am   I working");
-    debugger;
     var data = cartData;
     var cartTotal = data.reduce(function(prev, cur) {
       return prev + cur.totalCost * cur.count;
     }, 0);
-
-    debugger;
     return cartTotal;
   }
 
   render() {
-    debugger;
     if (
       this.props.cart == null ||
       this.props.cart == null ||

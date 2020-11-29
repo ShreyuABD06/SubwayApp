@@ -4,6 +4,13 @@ import product3 from "../../images/Ham5.jpg";
 import sweet1 from "../../images/sweet-1.jpg";
 import sweet2 from "../../images/sweet-2.jpg";
 import sweet3 from "../../images/sweet-3.jpg";
+import sweet4 from "../../images/sweet-4.jpg";
+import sweet5 from "../../images/sweet-5.jpg";
+import sweet6 from "../../images/sweet-6.jpg";
+import sweet7 from "../../images/sweet-7.jpg";
+import sweet8 from "../../images/sweet-8.jpg";
+import sweet9 from "../../images/sweet-9.jpg";
+import sweet10 from "../../images/sweet-10.jpg";
 
 export const options = {
   cheese: [
@@ -100,33 +107,30 @@ export const options = {
 export const productData = [
   {
     id: "p1",
-    img: product1,
-    alt: "Pizza",
-    name: "Supreme Pizza",
-    desc:
-      "Marinara Sauce,basil,italian sausage, roma tomatoes, olives, and pesto",
-    price: "300",
+    img: sweet4,
+    alt: "Vegie",
+    name: "Roasted Bread with almonds Sub",
+    desc: "Delicious combination of garden almonds, cake fruit.",
+    price: "100",
     button: "Add to cart",
     options: options
   },
   {
     id: "p2",
-    img: product2,
+    img: sweet5,
     alt: "Pizza",
-    name: "Hawwain Pizza",
-    desc:
-      "Marinara Sauce,basil,italian sausage, roma tomatoes, olives, and pesto",
+    name: "Cherry top Chocolate Cookie",
+    desc: "Cherry topped nutritious,cookie prepared with almonds",
     price: "200",
     button: "Add to cart",
     options: options
   },
   {
     id: "p3",
-    img: product3,
+    img: sweet6,
     alt: "Pizza",
-    name: "Veggie Overload",
-    desc:
-      "Marinara Sauce,basil,italian sausage, roma tomatoes, olives, and pesto",
+    name: "Double Dark Chunk Chocolate Cookie",
+    desc: "Dark chocolate baked hot cookies with hot chocolate",
     price: "150",
     button: "Add to cart",
     options: options
@@ -136,53 +140,75 @@ export const productData = [
 export const productDataTwo = [
   {
     id: "p4",
-    img: sweet1,
+    img: sweet8,
     alt: "Sweet",
-    name: "Butter Scotch Cake",
+    name: "Lettuce Wrapped Ham",
     desc:
-      "Marinara Sauce,basil,italian sausage, roma tomatoes, olives, and pesto",
-    price: "300",
+      "Served on a freshly baked bread, with an abundance of Lettuce and onions.",
+    price: "180",
     button: "Add to cart",
     options: options
   },
   {
     id: "p5",
-    img: sweet2,
+    img: sweet7,
     alt: "Sweet2",
-    name: "Icecream Shake",
+    name: "Spinach Potato Ham( 15 cm, 6 Inch )",
     desc:
-      "Marinara Sauce,basil,italian sausage, roma tomatoes, olives, and pesto",
+      "Served on a freshly baked bread, spinach base with an abundance of exotic Indian spice mix.",
     price: "200",
     button: "Add to cart",
     options: options
   },
   {
     id: "p6",
-    img: sweet3,
-    alt: "Pizza",
-    name: "Apple Fruit Cake",
+    img: sweet9,
+    alt: "Ham",
+    name: "Chatpata Chana Indian Mix",
     desc:
-      "Marinara Sauce,basil,italian sausage, roma tomatoes, olives, and pesto",
+      "97% Fat Free -A chunky, flavourful tangy mix of chickpea, bengal gram with aromatic Indian spices",
     price: "150",
     button: "Add to cart",
     options: options
   },
   {
     id: "p7",
-    img: sweet3,
-    alt: "Pizza",
-    name: "Apple Fruit Cake",
+    img: product1,
+    alt: "Ham",
+    name: "Spinach topped potato Cake",
     desc:
-      "Marinara Sauce,basil,italian sausage, roma tomatoes, olives, and pesto",
+      "Soft diced tofu cubes made of bean, spices & condiments, cooked in an oven to give a smoky effect.",
     price: "150",
     button: "Add to cart",
     options: options
   },
   {
     id: "p8",
-    img: sweet3,
+    img: product2,
+    alt: "Ham",
+    name: "Vegan Mix bread roast",
+    desc:
+      "Soft diced tofu cubes made of bean, spices & condiments, cooked in an oven to give a smoky effect.",
+    price: "150",
+    button: "Add to cart",
+    options: options
+  },
+  {
+    id: "p9",
+    img: product3,
     alt: "Pizza",
-    name: "Apple Fruit Cake",
+    name: "Chocolate Baked fruit Cake",
+    desc:
+      "Indian fruit topped with aromatic Mexican seasoning, roman grapes to chocolate  up your palate.",
+    price: "150",
+    button: "Add to cart",
+    options: options
+  },
+  {
+    id: "p10",
+    img: sweet3,
+    alt: "Ham",
+    name: "Apple Fruit Cake Icecream",
     desc:
       "Marinara Sauce,basil,italian sausage, roma tomatoes, olives, and pesto",
     price: "150",
@@ -190,12 +216,23 @@ export const productDataTwo = [
     options: options
   },
   {
-    id: "p9",
-    img: sweet3,
-    alt: "Pizza",
-    name: "Apple Fruit Cake",
+    id: "p11",
+    img: sweet10,
+    alt: "Ham",
+    name: "Egg Tomato Topped Noodles",
     desc:
-      "Marinara Sauce,basil,italian sausage, roma tomatoes, olives, and pesto",
+      "Served on a freshly boiled egg,with an abundance of exotic Indian spice mix",
+    price: "150",
+    button: "Add to cart",
+    options: options
+  },
+  {
+    id: "p12",
+    img: sweet1,
+    alt: "Pizza",
+    name: "Choco Icecream Shake",
+    desc:
+      "Hot chocolate cake served as cold icecream with almonds, cashews and badam",
     price: "150",
     button: "Add to cart",
     options: options

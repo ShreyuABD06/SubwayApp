@@ -37,9 +37,9 @@ export const HomeItems = styled.div`
 `;
 
 export const HomeH1 = styled.h1`
-  font-size: clamp(2.5rem, 10vw, 5rem);
+  font-size: clamp(2rem, 9vw, 5rem);
   margin-bottom: 1rem;
-  box-shadow: 3px 5px #e9ba23;
+  box-shadow: 3px 6px #b5935d;
   letter-spacing: 3px;
 `;
 
