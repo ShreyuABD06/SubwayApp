@@ -206,10 +206,10 @@ export const ModalContent = styled.div`
 export const CloseModalButton = styled(MdClose)`
   cursor: pointer;
   position: absolute;
-  top: 20px;
-  right: 20px;
-  width: 32px;
-  height: 32px;
+  top: 10px;
+  right: 5px;
+  width: 26px;
+  height: 26px;
   padding: 0;
   z-index: 10;
 `;
@@ -370,6 +370,9 @@ export const ModalFooter = styled.div`
 
 export const ModalSelectedItemsWrapper = styled.div`
   padding-bottom: 12px;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  animation: 0.3s ease-out;
 `;
 
 export const ModalSelectedItems = styled.div`
@@ -392,11 +395,20 @@ export const SelectedAddonsCount = styled.div`
   }
 `;
 
+export const SelectedAddonsShow = styled.div`
+  color: #282c3f;
+  font-size: 13px;
+  width: 70px;
+  float: right;
+  text-align: right;
+  cursor: pointer;
+`;
+
 export const SelectedItems = styled.div`
   display: block;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  text-overflow: break-word;
   margin-right: 80px;
   color: #7e808c;
   font-size: 13px;

@@ -112,6 +112,7 @@
 
 .sauceMax {
   align-items: center;
+  justify-content: center;
   widows: 100%;
   transition: 0.3s ease-in-out;
 }

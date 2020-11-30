@@ -30,6 +30,7 @@ import {
   ModalSelectedItemsWrapper,
   ModalSelectedItems,
   SelectedAddonsCount,
+  SelectedAddonsShow,
   SelectedItems,
   AddItemsBtnWrap,
   RadioContainer,
@@ -97,6 +98,7 @@ class FoodOptionsModal extends React.Component {
     };
     cartObj.push(newItem);
     this.props.addToCart(cartObj);
+    console.log(this.props.cart);
   }
 
   onAddonChange(val) {
@@ -162,17 +164,9 @@ class FoodOptionsModal extends React.Component {
     }
   }
 
-  renderValidationContent() {
+  showSelectedDetails() {
     debugger;
-    if (this.props.maxSauce == true) {
-      return (
-        <ValidationDiv>
-          You can't select more than three favorite sauce!
-        </ValidationDiv>
-      );
-    } else {
-      return null;
-    }
+    this.props.showAllDetails();
   }
 
   render() {
@@ -418,24 +412,45 @@ class FoodOptionsModal extends React.Component {
           <ModalValidationWrapper>
             <Collapse in={this.props.maxSauce} className="sauceMax">
               <ValidationDiv>
-                You can't select more than three favorite sauce!
+                You can select only three three favorite sauce!
               </ValidationDiv>
             </Collapse>
           </ModalValidationWrapper>
           <ModalFooter>
-            {/* <ModalBox /> */}
-            <ModalSelectedItemsWrapper>
-              <ModalSelectedItems>
-                <SelectedAddonsCount>
-                  {3 + this.props.options.length + this.props.addons.length}
-                </SelectedAddonsCount>
+            <ModalBox />
+            <Collapse in={!this.props.showDetails}>
+              <ModalSelectedItemsWrapper>
+                <ModalSelectedItems>
+                  <SelectedAddonsCount
+                    onClick={this.showSelectedDetails.bind(this)}
+                  >
+                    {3 + this.props.options.length + this.props.addons.length}
+                  </SelectedAddonsCount>
+                  <SelectedItems>
+                    <span>
+                      {this.props.cheeseType}, {this.props.chipsType},
+                      {this.props.vegType}
+                    </span>
+                  </SelectedItems>
+                </ModalSelectedItems>
+              </ModalSelectedItemsWrapper>
+            </Collapse>
+            <Collapse in={this.props.showDetails}>
+              <ModalSelectedItemsWrapper>
+                <SelectedAddonsShow
+                  onClick={this.showSelectedDetails.bind(this)}
+                >
+                  Hide
+                </SelectedAddonsShow>
                 <SelectedItems>
-                  {this.props.cheeseType}, {this.props.chipsType},
-                  {this.props.vegType},{this.props.displayAddons},
-                  {this.props.displayOptions}
+                  <span>
+                    {this.props.cheeseType}, {this.props.chipsType},
+                    {this.props.vegType},{this.props.displayOptions},
+                    {this.props.displayAddons}
+                  </span>
                 </SelectedItems>
-              </ModalSelectedItems>
-            </ModalSelectedItemsWrapper>
+              </ModalSelectedItemsWrapper>
+            </Collapse>
             <AddItemsBtnWrap
               onClick={this.AddNewItem.bind(this, this.props.data)}
             >
@@ -466,7 +481,8 @@ const mapStateToProps = state => ({
   cart: state.cartReducerState.cart,
   displayAddons: state.cartReducerState.displayAddons,
   displayOptions: state.cartReducerState.displayOptions,
-  maxSauce: state.cartReducerState.maxSauce
+  maxSauce: state.cartReducerState.maxSauce,
+  showDetails: state.cartReducerState.showDetails
 });
 
 const mapDispatchToProps = {

@@ -8,7 +8,8 @@ import {
   DISPLAY_ADDONS,
   DISPLAY_OPTIONS,
   HANDLE_MAX_SAUCE,
-  KILL_CURRENT_STATE
+  KILL_CURRENT_STATE,
+  SHOW_ALL_DETAILS
 } from "./CartActionsTypes";
 
 export const addToCart = data => {
@@ -80,5 +81,11 @@ export const handleSauceMaxLimit = () => {
 export const killAllValues = () => {
   return {
     type: KILL_CURRENT_STATE
+  };
+};
+
+export const showAllDetails = () => {
+  return {
+    type: SHOW_ALL_DETAILS
   };
 };

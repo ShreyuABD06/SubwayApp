@@ -124,7 +124,7 @@ export const productData = [
     id: "p1",
     img: sweet4,
     alt: "Vegie",
-    name: "Roasted Bread with almonds Sub",
+    name: "Roasted Bread almonds",
     desc: "Delicious combination of garden almonds, cake fruit.",
     price: "100",
     button: "Add to cart",
@@ -134,7 +134,7 @@ export const productData = [
     id: "p2",
     img: sweet5,
     alt: "Choco",
-    name: "Cherry top Chocolate Cookie",
+    name: "Cherry topped Chocolate",
     desc: "Cherry topped nutritious,cookie prepared with almonds",
     price: "200",
     button: "Add to cart",
@@ -144,7 +144,7 @@ export const productData = [
     id: "p3",
     img: sweet6,
     alt: "Choco",
-    name: "Double Dark Chunk Chocolate Cookie",
+    name: "Dark Chocolate Cookie",
     desc: "Dark chocolate baked hot cookies with hot chocolate",
     price: "150",
     button: "Add to cart",
@@ -168,7 +168,7 @@ export const productDataTwo = [
     id: "p5",
     img: sweet7,
     alt: "Sweet2",
-    name: "Spinach Potato Ham( 15 cm, 6 Inch )",
+    name: "Spinach Potatoes Ham",
     desc:
       "Served on a freshly baked bread, spinach base with an abundance of exotic Indian spice mix.",
     price: "200",
@@ -179,7 +179,7 @@ export const productDataTwo = [
     id: "p6",
     img: sweet9,
     alt: "Ham",
-    name: "Chatpata Chana Indian Mix",
+    name: "Chatpata veg Channa Mix",
     desc:
       "97% Fat Free -A chunky, tangy mix of chickpea, bengal gram with aromatic Indian spices",
     price: "120",
@@ -190,7 +190,7 @@ export const productDataTwo = [
     id: "p7",
     img: product1,
     alt: "Ham",
-    name: "Spinach topped potato Cake",
+    name: "Spinach top Cake",
     desc:
       "Soft diced tofu cubes made of bean, spices & condiments, cooked in an oven to give a smoky effect.",
     price: "160",
@@ -201,7 +201,7 @@ export const productDataTwo = [
     id: "p8",
     img: product2,
     alt: "Ham",
-    name: "Vegan Mix bread roast",
+    name: "Vegan Mix roast",
     desc:
       "Soft diced tofu cubes made of bean, spices & condiments, cooked in an oven to give a smoky effect.",
     price: "150",
@@ -212,7 +212,7 @@ export const productDataTwo = [
     id: "p9",
     img: product3,
     alt: "Choco",
-    name: "Chocolate Baked fruit Cake",
+    name: "Chocolate fruit Cake",
     desc:
       "Indian fruit topped with aromatic Mexican seasoning, roman grapes to chocolate  up your palate.",
     price: "250",
@@ -223,7 +223,7 @@ export const productDataTwo = [
     id: "p10",
     img: sweet3,
     alt: "Ham",
-    name: "Apple Fruit Cake Icecream",
+    name: "Apple Fruit Icecream",
     desc:
       "Marinara Sauce,basil,italian sausage, roma tomatoes, olives, and pesto",
     price: "110",
@@ -234,7 +234,7 @@ export const productDataTwo = [
     id: "p11",
     img: sweet10,
     alt: "Ham",
-    name: "Egg Tomato Topped Noodles",
+    name: "Egg Topped Noodles",
     desc:
       "Served on a freshly boiled egg,with an abundance of exotic Indian spice mix",
     price: "230",
@@ -245,9 +245,8 @@ export const productDataTwo = [
     id: "p12",
     img: sweet1,
     alt: "Choco",
-    name: "Choco Icecream Shake",
-    desc:
-      "Hot chocolate cake served as cold icecream with almonds, cashews and badam",
+    name: "Choco Ice Shake",
+    desc: "Hot chocolate cake served as cold icecream with almonds and badam",
     price: "280",
     button: "Add to cart",
     options: options

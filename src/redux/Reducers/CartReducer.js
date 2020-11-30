@@ -8,7 +8,8 @@ import {
   DISPLAY_ADDONS,
   DISPLAY_OPTIONS,
   HANDLE_MAX_SAUCE,
-  KILL_CURRENT_STATE
+  KILL_CURRENT_STATE,
+  SHOW_ALL_DETAILS
 } from "../Actions/Cart/CartActionsTypes";
 
 const initialState = {
@@ -22,7 +23,8 @@ const initialState = {
   cart: [],
   displayAddons: "",
   displayOptions: "",
-  maxSauce: false
+  maxSauce: false,
+  showDetails: false
 };
 
 export default function(state = initialState, action) {
@@ -34,7 +36,11 @@ export default function(state = initialState, action) {
         showModal: 0,
         addonCost: 0,
         addons: [],
-        options: []
+        options: [],
+        displayAddons: "",
+        displayOptions: "",
+        maxSauce: false,
+        showDetails: false
       };
     }
     case ON_RADIO_VALUE_CHANGE: {
@@ -110,6 +116,12 @@ export default function(state = initialState, action) {
         addonCost: 0,
         addons: [],
         options: []
+      };
+    }
+    case SHOW_ALL_DETAILS: {
+      return {
+        ...state,
+        showDetails: !state.showDetails
       };
     }
     default:
