@@ -10,9 +10,7 @@ export const CartContainer = styled.aside`
   background-color: #fff;
   box-shadow: 0 2px 20px 0 rgba(40, 44, 63, 0.15);
   animation: _1F-73 0.3s forwards;
-  /* display: grid; */
   display: flex;
-  /* align-items: center; */
   top: 0;
   transition: 0.3s ease-in-out;
   right: ${({ isOpen }) => (isOpen ? "0" : "-1000px")};
@@ -42,33 +40,16 @@ export const CartEmptyImage = styled.img`
 
 export const CartWrapper = styled.div`
   display: flex;
-  /* align-items: center; */
-  /* justify-content: center; */
   flex-direction: column;
   font-size: 1rem;
   transition: 0.2s ease-in-out;
   color: #000;
   cursor: pointer;
-
-  /* &:hover {
-    color: #e31837;
-    transition: 0.2s ease-in-out;
-  } */
-
   display: flex;
   flex-direction: column;
-  /* justify-content: center;
-  align-items: center; */
-  /* line-height: 1.8;
-  color: #141414; */
   flex-flow: column;
   max-height: 100%;
   width: 320px;
-  /* @media screen and (max-width: 850px) {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-  } */
 `;
 
 export const CartHeader = styled.div`
@@ -113,19 +94,6 @@ export const Icon = styled.div`
   cursor: pointer;
   outline: none;
 `;
-
-// export const CartMenu = styled.div`
-//   display: flex;
-//   top: 5rem;
-//   left: 1.2rem;
-//   grid-template-columns: 1fr;
-//   grid-template-rows: repeat() (3, 80px);
-//   text-align: center;
-
-//   @media screen and (max-width: 480px) {
-//     grid-template-rows: repeat(3, 60px);
-//   }
-// `;
 
 export const CartMenu = styled.div`
   flex-grow: 1;
@@ -176,8 +144,6 @@ export const CartDataContainer = styled.div`
 `;
 
 export const CartEditItemCount = styled.div`
-  /* padding-right: 16px; */
-
   width: 70px !important;
   font-size: 12px !important;
   display: block !important;
@@ -203,27 +169,17 @@ export const CartBillingWrapper = styled.div`
 `;
 export const CartBillingData = styled.div`
   width: 120px;
-  /* padding-left: 16px;
-  align-items: center;
-  justify-content: center; */
 `;
 
 export const CartItemHeader = styled.div``;
 
 export const CartDataWrapper = styled.div`
   display: flex;
-  /* align-items: center;
-  justify-content: center; */
   flex-direction: column;
   font-size: 1rem;
   transition: 0.2s ease-in-out;
   color: #000;
   cursor: pointer;
-
-  /* &:hover {
-    color: #e31837;
-    transition: 0.2s ease-in-out;
-  } */
 `;
 
 export const CartItem = styled.div`

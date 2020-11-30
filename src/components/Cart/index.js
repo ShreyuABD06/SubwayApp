@@ -132,7 +132,6 @@ class Cart extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  //showModal: state.productsReducerState.showModal,
   cheeseType: state.cartReducerState.cheeseType,
   chipsType: state.cartReducerState.chipsType,
   vegType: state.cartReducerState.vegType,

@@ -19,15 +19,9 @@ export const ValidationDiv = styled.div`
   left: 50px;
   align-items: center;
   transition: all 2s ease-in-out;
-  /* transition: 0.5s ease-in-out; */
 `;
 
-export const ModalValidationWrapper = styled.div`
-  /* margin-bottom: 3px;
-  position: relative;
-  flex-grow: 1;
-  display: flex; */
-`;
+export const ModalValidationWrapper = styled.div``;
 
 export const ValidationContent = styled.p`
   justify-content: center;
@@ -117,25 +111,9 @@ export const Background = styled.div`
   align-items: center;
 `;
 
-// export const ModalWrapper = Modal.styled`
-//   width: 800px;
-//   height: 500px;
-//   box-shadow: 0 5px 16px rgba(0, 0, 0, 0.2);
-//   background: #fff;
-//   color: #000;
-//   display: grid;
-//   grid-template-columns: 1fr 1fr;
-//   position: relative;
-//   z-index: 10;
-//   border-radius: 10px;
-// `;
 export const ModalWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  /* justify-content: center;
-  align-items: center; */
-  /* line-height: 1.8;
-  color: #141414; */
   flex-flow: column;
   max-height: 80vh;
   width: 600px;
@@ -144,25 +122,6 @@ export const ModalWrapper = styled.div`
     display: flex;
     justify-content: space-between;
   }
-  /* p {
-    margin-bottom: 1rem;
-  }
-
-  button {
-    padding: 5px 12px;
-    background: #60b246;
-    color: white;
-    border: none;
-  }
-
-  span.sp1 {
-    align-items: left;
-    text-align: left;
-  }
-  span.sp2 {
-    align-items: right;
-    text-align: right;
-  } */
 `;
 
 export const ModalImg = styled.img`
@@ -175,32 +134,9 @@ export const ModalImg = styled.img`
 export const ModalContent = styled.div`
   display: flex;
   flex-direction: column;
-  /* justify-content: center;
-  align-items: center; */
-  /* line-height: 1.8;
-  color: #141414; */
   flex-flow: column;
   max-height: 80vh;
   width: 600px;
-  /* p {
-    margin-bottom: 1rem;
-  }
-
-  button {
-    padding: 5px 12px;
-    background: #60b246;
-    color: white;
-    border: none;
-  }
-
-  span.sp1 {
-    align-items: left;
-    text-align: left;
-  }
-  span.sp2 {
-    align-items: right;
-    text-align: right;
-  } */
 `;
 
 export const CloseModalButton = styled(MdClose)`
@@ -268,43 +204,6 @@ export const ModalDataMenu = styled.div`
 export const DataMenuWrapper = styled.div`
   padding: 16px 20px 14px 0;
   border-top: 1px dashed #bebfc5;
-`;
-
-export const DataMenuLink = styled(Link)`
-  /* color: #fff;
-  font-size: 2rem;
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-  cursor: pointer; */
-
-  display: inline-block;
-  color: #93959f;
-  font-size: 12px;
-  margin-right: 22px;
-  cursor: pointer;
-  position: relative;
-  padding-bottom: 7px;
-
-  @media screen and (max-width: 400px) {
-    position: absolute;
-    top: 10px;
-    left: 25px;
-  }
-
-  &:after {
-    content: "";
-    right: -12px;
-    position: absolute;
-    background-image: linear-gradient(90deg, #a9abb2 100%, #a9abb2 0);
-    background-position: right 0.5em;
-    background-size: 2px 2px;
-    background-repeat: no-repeat;
-    display: inline-block;
-    width: 1px;
-    padding-left: 12px;
-    height: 1em;
-  }
 `;
 
 export const ModalDataWrapper = styled.div`
@@ -422,12 +321,6 @@ export const AddItemsBtnWrap = styled.div`
   font-weight: 600;
   font-size: 15px;
   cursor: pointer;
-
-  /* @media screen and (max-width: 450px) {
-    padding: 6px 11px;
-    font-weight: 300;
-    font-size: 10px;
-  } */
 `;
 
 export const RadioContainer = styled.div`
@@ -577,8 +470,6 @@ export const CheckBoxLabel = styled.label`
     content: "";
     position: absolute;
     display: none;
-    /* transform: scale(0.5);
-    background-color: #60b246; */
   }
 
   input:checked ~ .checkmark:after {

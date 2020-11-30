@@ -18,7 +18,6 @@ import {
   ModalDataBox,
   ModalDataMenu,
   DataMenuWrapper,
-  DataMenuLink,
   ModalDataWrapper,
   ModalBox,
   ModalChoicesList,
@@ -133,19 +132,14 @@ class FoodOptionsModal extends React.Component {
     var numberOfCheckedItems = 0;
     var optionSelected = [];
     for (var i = 0; i < checkboxes.length; i++) {
-      console.log(this.props.options);
-      console.log(checkboxes[i].id);
       var index = currentOptions.findIndex(x => x.id == checkboxes[i].id);
       if (index == -1 && checkboxes[i].checked == true) {
         if (currentOptions.length > 2) {
-          console.log(checkboxes[i].id);
-          console.log(val.id);
           document.getElementById(checkboxes[i].id).checked = false;
           this.props.handleSauceMaxLimit();
           setTimeout(() => {
             this.props.handleSauceMaxLimit();
           }, 1000);
-          //alert("You can't select more than three favorite sauce!");
           this.props.onOptionalItemsChange(currentOptions);
         } else {
           currentOptions.push(val);
@@ -165,7 +159,6 @@ class FoodOptionsModal extends React.Component {
   }
 
   showSelectedDetails() {
-    debugger;
     this.props.showAllDetails();
   }
 
@@ -428,8 +421,7 @@ class FoodOptionsModal extends React.Component {
                   </SelectedAddonsCount>
                   <SelectedItems>
                     <span>
-                      {this.props.cheeseType}, {this.props.chipsType},
-                      {this.props.vegType}
+                      {this.props.cheeseType}, {this.props.chipsType}
                     </span>
                   </SelectedItems>
                 </ModalSelectedItems>
