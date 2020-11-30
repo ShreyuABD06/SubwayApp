@@ -1,12 +1,8 @@
-import {
-  SAY_REDUX_WORKING,
-  MODAL_CLOSE,
-  ADD_TO_CART
-} from "./ProductsActionTypes";
+import { OPEN_MODAL, MODAL_CLOSE, ADD_TO_CART } from "./ProductsActionTypes";
 
-export const sayReduxWorking = id => {
+export const openProductModal = id => {
   return {
-    type: SAY_REDUX_WORKING,
+    type: OPEN_MODAL,
     payload: id
   };
 };

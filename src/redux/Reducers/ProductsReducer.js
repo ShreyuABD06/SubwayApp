@@ -1,5 +1,5 @@
 import {
-  SAY_REDUX_WORKING,
+  OPEN_MODAL,
   MODAL_CLOSE,
   ADD_TO_CART
 } from "../Actions/Products/ProductsActionTypes";
@@ -7,7 +7,6 @@ import {
 const initialState = {
   allIds: [],
   byIds: {},
-  myMessage: "Hello Redux Working",
   showModal: 0,
   cart: [],
   totalCost: 0
@@ -15,10 +14,9 @@ const initialState = {
 
 export default function(state = initialState, action) {
   switch (action.type) {
-    case SAY_REDUX_WORKING: {
+    case OPEN_MODAL: {
       return {
         ...state,
-        myMessage: "Redux Has to work",
         showModal: action.payload
       };
     }

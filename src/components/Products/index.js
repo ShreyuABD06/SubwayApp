@@ -19,27 +19,20 @@ import {
   Background
 } from "./ProductsElements";
 import FoodOptionsModal from "./FoodOptionsModal";
-//import Modal from "react-modal";
 
 class Products extends React.Component {
   componentDidMount() {}
-  SayHello = id => {
-    var data = this.props.sayReduxWorking(id);
+  viewProductModal = id => {
+    var data = this.props.openProductModal(id);
   };
 
   closeModal = e => {
     this.props.closeModal();
-    // this.setState({
-    //   show: !this.state.show
-    // });
   };
 
   addToCart() {}
 
   render() {
-    // if(this.props.showModal ! =0){
-    //   document.body.className+='blockScroll';
-    // }
     return (
       <ProductsContainer>
         <ProductsHeading>{this.props.heading}</ProductsHeading>
@@ -52,20 +45,13 @@ class Products extends React.Component {
                   <ProductTitle>{product.name}</ProductTitle>
                   <ProductDesc>{product.desc}</ProductDesc>
                   <ProductPrice>{product.price}</ProductPrice>
-                  {/* <ProductButton onClick={this.SayHello.bind(this)}>
-                    {product.button}
-                  </ProductButton> */}
                   <ProductButton
                     id={product.id}
-                    onClick={() => this.SayHello(product.id)}
+                    onClick={() => this.viewProductModal(product.id)}
                   >
                     {product.button}
                   </ProductButton>
                 </ProductInfo>
-                {/* <Modal
-                  showModal={this.props.showModal === product.id}
-                  setShowModal={this.closeModal}
-                /> */}
                 <FoodOptionsModal
                   data={product}
                   onClose={this.closeModal}
@@ -76,14 +62,11 @@ class Products extends React.Component {
             );
           })}
         </ProductWrapper>
-        {/* <Button onClick={openModal}>I'm a modal</Button>
-        <Modal showModal={showModal} setShowModal={setShowModal} /> */}
       </ProductsContainer>
     );
   }
 }
 const mapStateToProps = state => ({
-  newMessage: state.productsReducerState.myMessage,
   showModal: state.productsReducerState.showModal
 });
 
