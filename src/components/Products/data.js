@@ -62,6 +62,11 @@ export const options = {
       id: "s4",
       name: "Sweet Onion",
       price: 0
+    },
+    {
+      id: "s5",
+      name: "Tomato Chilly",
+      price: 0
     }
   ],
   vegetables: [
@@ -85,7 +90,7 @@ export const options = {
     {
       id: "add1",
       name: "Cheese Slice",
-      price: 20
+      price: 50
     },
     {
       id: "add2",
@@ -95,12 +100,22 @@ export const options = {
     {
       id: "add3",
       name: "Coco Cheese",
-      price: 24
+      price: 54
     },
     {
       id: "add4",
+      name: "Lime Coke",
+      price: 36
+    },
+    {
+      id: "add5",
       name: "Coco Latte",
-      price: 24
+      price: 65
+    },
+    {
+      id: "add6",
+      name: "Butter Vannila",
+      price: 30
     }
   ]
 };
@@ -166,7 +181,7 @@ export const productDataTwo = [
     alt: "Ham",
     name: "Chatpata Chana Indian Mix",
     desc:
-      "97% Fat Free -A chunky, flavourful tangy mix of chickpea, bengal gram with aromatic Indian spices",
+      "97% Fat Free -A chunky, tangy mix of chickpea, bengal gram with aromatic Indian spices",
     price: "120",
     button: "Add to cart",
     options: options

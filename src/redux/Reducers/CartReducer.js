@@ -74,7 +74,8 @@ export default function(state = initialState, action) {
         cheeseType: action.cheeseType,
         vegType: action.vegType,
         chipsType: action.chipsType,
-        totalCost: action.price
+        totalCost: action.price,
+        maxSauce: false
       };
     }
     case SET_ADDON_COST: {

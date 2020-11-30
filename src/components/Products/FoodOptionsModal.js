@@ -35,7 +35,9 @@ import {
   RadioContainer,
   LabelName,
   Label,
-  CheckBoxLabel
+  CheckBoxLabel,
+  ValidationDiv,
+  ModalValidationWrapper
 } from "./ProductsElements";
 import Modal from "react-modal";
 import FoodOptionsModalStyles from "./FoodOptionsModal.css";
@@ -141,7 +143,7 @@ class FoodOptionsModal extends React.Component {
           setTimeout(() => {
             this.props.handleSauceMaxLimit();
           }, 1000);
-          // alert("You can't select more than three favorite sauce!");
+          //alert("You can't select more than three favorite sauce!");
           this.props.onOptionalItemsChange(currentOptions);
         } else {
           currentOptions.push(val);
@@ -160,9 +162,20 @@ class FoodOptionsModal extends React.Component {
     }
   }
 
-  render() {
-    console.log(3 + this.props.addons.length + this.props.options.length);
+  renderValidationContent() {
+    debugger;
+    if (this.props.maxSauce == true) {
+      return (
+        <ValidationDiv>
+          You can't select more than three favorite sauce!
+        </ValidationDiv>
+      );
+    } else {
+      return null;
+    }
+  }
 
+  render() {
     if (!this.props.showModal) {
       return null;
     }
@@ -402,25 +415,16 @@ class FoodOptionsModal extends React.Component {
               </ModalDataWrapper>
             </ModalDataBox>
           </ModalDataContainer>
+          <ModalValidationWrapper>
+            <Collapse in={this.props.maxSauce} className="sauceMax">
+              <ValidationDiv>
+                You can't select more than three favorite sauce!
+              </ValidationDiv>
+            </Collapse>
+          </ModalValidationWrapper>
           <ModalFooter>
             {/* <ModalBox /> */}
             <ModalSelectedItemsWrapper>
-              <Collapse in={this.props.maxSauce}>
-                <Paper elevation={0} className="sauceMax">
-                  <Typography
-                    style={{
-                      fontSize: 14,
-                      fontWeight: "400",
-                      color: "#fff",
-                      fontFamily: "ProximaNova,Arial,Helvetica Neue,sans-serif",
-                      margin: "15px 0px 15px 0px"
-                    }}
-                    variant="body2"
-                  >
-                    You can select a maximum of 3 Choice of Sauce Any (3).
-                  </Typography>
-                </Paper>
-              </Collapse>
               <ModalSelectedItems>
                 <SelectedAddonsCount>
                   {3 + this.props.options.length + this.props.addons.length}

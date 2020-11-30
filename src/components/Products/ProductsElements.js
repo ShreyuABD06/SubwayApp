@@ -11,6 +11,29 @@ export const ProductsContainer = styled.div`
   color: #fff;
 `;
 
+export const ValidationDiv = styled.div`
+  background-color: #fa4a5b;
+  color: #fff;
+  padding: 11px 16px;
+  justify-content: center;
+  left: 50px;
+  align-items: center;
+  transition: all 2s ease-in-out;
+  /* transition: 0.5s ease-in-out; */
+`;
+
+export const ModalValidationWrapper = styled.div`
+  /* margin-bottom: 3px;
+  position: relative;
+  flex-grow: 1;
+  display: flex; */
+`;
+
+export const ValidationContent = styled.p`
+  justify-content: center;
+  align-items: center;
+`;
+
 export const ProductWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -341,7 +364,8 @@ export const ModalFooter = styled.div`
   color: #282c3f;
   font-family: Arial, sans-serif;
   @media screen and (max-width: 850px) {
-    width:100%
+    width: 100%;
+  }
 `;
 
 export const ModalSelectedItemsWrapper = styled.div`
